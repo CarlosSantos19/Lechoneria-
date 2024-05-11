@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lechoneria de la Abuela</title>
+  <link rel="stylesheet" href="quintomenu.css">
+</head>
+<body>
+  <header>
+    <img src="logo.jfif" alt="Logo de tu empresa">
+    <h1>Lechonería de la Abuela</h1>
+  </header>
+  <main>
+    <div class="product-container">
+      <div class="product" onclick="showProductDetails('LECHONA')">
+        <img src="Lechona.jfif" alt="LECHONA" data-price="" name="LECHONA"    >
+        <p>LECHONA</p>
+      </div>
+      <div class="product" onclick="showProductDetails('CHORIZOS')">
+        <img src="Chorizos.jfif" alt="CHORIZOS">
+        <p>CHORIZOS</p>
+      </div>
+      <div class="product" onclick="showProductDetails('CODITOS')">
+        <img src="Coditos.jfif" alt="CODITOS">
+        <p>CODITOS</p>
+      </div>
+      <div class="product" onclick="showProductDetails('COSTILLAS')" data-price="25000">
+        <img src="Costilla.jfif" alt="COSTILLAS">
+        <p>COSTILLAS</p>
+      </div>
+      <div class="product" onclick="showProductDetails('PANCETA')" data-price="25000">
+        <img src="Panzeta.jfif" alt="PANCETA">
+        <p>PANCETA</p>
+      </div>
+      <div class="product" onclick="showProductDetails('TAMALES')" data-price="0">
+        <img src="Tamales.jfif" alt="TAMALES">
+        <p>TAMALES</p>
+      </div>
+      <!-- Repite este patrón para los otros productos -->
+    </div>
+    <a href="bebidasdos.html" class="btn-bebidas">Ver Bebidas</a>
+    <hr class="separator-line">
+
+    <div id="product-details-container" class="hidden" >
+      <h2 id="product-name"></h2>
+      <img id="product-image" src="" alt="Producto">
+      <label for="size">Disfrutalo como quieras:</label>
+      <select id="size">
+        <option value="cojin 15 platos"  data-price="170000">cojín 15 platos</option>
+        <option value="cojin 25 platos" data-price="280000">cojín 25 platos</option>
+        <option value="cojin 30 platos" data-price="330000">Cojín 30 platos</option>
+        <option value="cojin 45 platos" data-price="370000">cojín 45 platos</option>
+        <option value="cojin 50 platos" data-price="410000">cojín 50 platos</option>
+        <option value="cojin 60 platos" data-price="450000">Cojín 60 platos</option>
+        <option value="cojin 80 platos" data-price="520000">cojín 80 platos</option>
+        <option value="cojin 100 platos" data-price="720000">cojín 100 platos</option>
+      </select>
+      <button onclick="acceptProduct()">Aceptar</button>
+      <br>
+      <button onclick="cancelProduct()">Cancelar</button>
+    </div>
+    <table id="summary-table" class="hidden">
+      <thead>
+        
+        <tr>
+          <th>Producto</th>
+          <th>El pedido debe venir</th>
+          <th>valor</th>
+          <th>Añadir Pedido</th>
+          <th>Cancelar Pedido</th>
+        </tr>
+      </thead>
+
+      <tbody id="summary-table-body">
+        <!-- Aquí se agregarán las filas del resumen -->
+      </tbody>
+    </table>
+  </main>
+
+  <table id="menu-table">
+    <!-- Contenido de la tabla del menú -->
+  </table>
+    <script src="quintomenu.js"></script>
+</body>
+</html>
